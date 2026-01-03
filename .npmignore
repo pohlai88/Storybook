@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Build outputs (keep dist, but ignore storybook-static)
+storybook-static/
+.cache/
+.temp/
+
+# Development files
+.env
+.env.local
+.env.*.local
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation (keep docs/, but ignore build docs)
+docs/build/
+docs/temp/
+
+# Source maps (optional - uncomment if you don't want to include them)
+# *.map
+

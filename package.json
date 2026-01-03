@@ -1,14 +1,92 @@
-{
+﻿{
   "name": "@aibos/storybook",
   "version": "1.0.0",
-  "description": "AIBOS Design System Storybook",
-  "private": true,
+  "description": "AIBOS Design System Storybook - Interactive component documentation and playground",
+  "keywords": [
+    "storybook",
+    "design-system",
+    "components",
+    "documentation",
+    "aibos",
+    "web-components",
+    "ui",
+    "design-tokens"
+  ],
+  "author": "AI-BOS",
+  "license": "MIT",
   "type": "module",
-  "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build",
-    "build:storybook:prod": "cross-env NODE_ENV=production storybook build"
+  "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./config": {
+      "types": "./dist/config/index.d.ts",
+      "import": "./dist/config/index.js"
+    },
+    "./stories": {
+      "types": "./dist/stories/index.d.ts",
+      "import": "./dist/stories/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./styles": "./style.css",
+    "./package.json": "./package.json"
   },
+  "files": [
+    "dist/**/*",
+    ".storybook/**/*",
+    "components/**/*",
+    "styles/**/*",
+    "style.css",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "docs/**/*"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "npm run build:types && npm run build:storybook:prod",
+    "build:types": "tsc --project tsconfig.build.json",
+    "build:storybook": "storybook build",
+    "build:storybook:prod": "cross-env NODE_ENV=production storybook build",
+    "dev": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pohlai88/Storybook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pohlai88/Storybook/issues"
+  },
+  "homepage": "https://github.com/pohlai88/Storybook#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "dependencies": {},
   "devDependencies": {
     "@storybook/addon-a11y": "^8.6.15",
     "@storybook/addon-docs": "^8.6.15",
@@ -25,6 +103,9 @@
     "@tailwindcss/postcss": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.6.0",
-    "autoprefixer": "^10.4.23"
+    "autoprefixer": "^10.4.23",
+    "@types/node": "^20.0.0",
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4"
   }
 }
