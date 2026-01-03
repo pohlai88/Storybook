@@ -1,28 +1,30 @@
-﻿{
-    "version":  "1.0.0",
-    "name":  "@aibos/storybook",
-    "description":  "AIBOS Design System Storybook",
-    "scripts":  {
-                    "build:storybook":  "storybook build",
-                    "storybook":  "storybook dev -p 6006",
-                    "build:storybook:prod":  "cross-env NODE_ENV=production storybook build"
-                },
-    "devDependencies":  {
-                            "@storybook/addon-links":  "^8.6.15",
-                            "lit":  "^3.2.0",
-                            "postcss":  "^8.5.6",
-                            "@storybook/addon-essentials":  "^8.6.15",
-                            "cross-env":  "^10.1.0",
-                            "@storybook/addon-interactions":  "^8.6.15",
-                            "tailwindcss":  "^4.1.18",
-                            "@storybook/web-components-vite":  "^8.6.15",
-                            "postcss-cli":  "^11.0.1",
-                            "@storybook/addon-docs":  "^8.6.15",
-                            "@storybook/addon-a11y":  "^8.6.15",
-                            "storybook":  "^8.6.15",
-                            "@tailwindcss/postcss":  "^4.1.18",
-                            "@storybook/web-components":  "^8.6.15",
-                            "typescript":  "^5.6.0"
-                        },
-    "private":  true
+{
+  "name": "@aibos/storybook",
+  "version": "1.0.0",
+  "description": "AIBOS Design System Storybook",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
+    "build:storybook:prod": "cross-env NODE_ENV=production storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.15",
+    "@storybook/addon-docs": "^8.6.15",
+    "@storybook/addon-essentials": "^8.6.15",
+    "@storybook/addon-interactions": "^8.6.15",
+    "@storybook/addon-links": "^8.6.15",
+    "@storybook/web-components": "^8.6.15",
+    "@storybook/web-components-vite": "^8.6.15",
+    "storybook": "^8.6.15",
+    "cross-env": "^10.1.0",
+    "lit": "^3.2.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "@tailwindcss/postcss": "^4.1.18",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.6.0",
+    "autoprefixer": "^10.4.23"
+  }
 }
